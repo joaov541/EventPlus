@@ -96,7 +96,11 @@ public class ComentarioEventoController : ControllerBase
 
     }
 
-
+    /// <summary>
+    /// Endpoint para listar os comentários de um evento
+    /// </summary>
+    /// <param name="IdEvento">Id do evento listado</param>
+    /// <returns>Status code 200 e lista de comentários do evento</returns>
     [HttpGet("ListarComentariosEvento/{IdEvento}")]
     public IActionResult ListarComentariosEvento(Guid IdEvento)
     {
@@ -111,7 +115,11 @@ public class ComentarioEventoController : ControllerBase
 
     }
 
-
+    /// <summary>
+    /// Endpoint para listar somente os comentários que tem a propriedade Exibe como true, ou seja, os comentários que não tem conteúdo impróprio
+    /// </summary>
+    /// <param name="IdEvento">Id do evento que exibe apenas true</param>
+    /// <returns>Status code 200 e lista de comentários true no evento</returns>
     [HttpGet("ExibeTrue/{IdEvento}")]
     public IActionResult ListarSomenteExibe(Guid IdEvento)
     {
@@ -126,7 +134,11 @@ public class ComentarioEventoController : ControllerBase
         }
     }
 
-
+    /// <summary>
+    /// Endpoint para deletar um comentário por id do comentário
+    /// </summary>
+    /// <param name="IdComentarioEvento">Id do comentário deletado</param>
+    /// <returns>Status code 200 e comentário deletado</returns>
     [HttpDelete("{IdComentarioEvento}")]
     public IActionResult Deletar(Guid IdComentarioEvento)
     {
